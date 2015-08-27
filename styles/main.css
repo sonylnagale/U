@@ -1,11 +1,16 @@
 @font-face {
-    font-family: "ProximaNova-BoldItalic";
-    src: url("../fonts/ProximaNova-BoldIt.woff") format('woff');
+    font-family: "GothamBlack-Italic";
+    src: url("../fonts/GothamBlack-Italic.woff") format('woff');
     font-weight: bold;
     font-style: italic;
 }
 
-
+@font-face {
+    font-family: "Basel-BoldItalic";
+    src: url("../fonts/Basel-BoldItalic.woff") format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
 /* Livefyre Style Overrides */
 
 #livecomments .fyre-editor{
@@ -67,51 +72,54 @@
 .fyre .fyre-comment-actions a>span  {
 	opacity: 1 !important;
 }
-.fyre-editor-field p {
-	font: italic 12px sans-serif;
+.fyre-editor-field {
+	font: italic 12px sans-serif !important;
 	color: #333;
 }
-
-.fyre-comment-like-count::before {
-	font: bold italic 12px "ProximaNova-BoldItalic", Arial, sans-serif;
+.fyre .fyre-comment-like-count {
+	font-family: "GothamBlack-Italic", Arial, sans-serif;
+	font-weight: bold;
+	font-style: italic;
 	text-transform: uppercase;
-	color: #000 !important;
+	color: #000 !important;	
+}
+.fyre-comment-like-count::before {
+	font-family: "GothamBlack-Italic", Arial, sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	text-transform: uppercase;	
 	content: "(0";
 }
 
 .fyre-comment-like-count::after {
-	font: bold italic 12px "ProximaNova-BoldItalic", Arial, sans-serif;
+	font-family: "GothamBlack-Italic", Arial, sans-serif;
+	font-weight: bold;
+	font-style: italic;
 	text-transform: uppercase;
-	color: #000 !important;
 	content: ") ";
 }
 .fyre-share-link {
 	display: none !important;
 }
 
-.fyre-comment-count {
-	font-family: "ProximaNova-BoldItalic", Arial, sans-serif;
-	font-weight: bold;
-	font-style: italic;
-	text-transform: uppercase;
-}
 
+.fyre .fyre-comment-count,
 .fyre .fyre-stream-sort, 
 .fyre-stream-sort-options, 
 .fyre .fyre-stream-sort a, 
 .fyre-comment-actions,
 .fyre .fyre-comment-article a.fyre-comment-action-button {
-	font: bold italic 12px "ProximaNova-BoldItalic", Arial, sans-serif;
+	font: bold italic 12px "GothamBlack-Italic", Arial, sans-serif;
 	text-transform: uppercase;
 	color: #000 !important;
 }
 
 .fyre .fyre-stream-sort a.fyre-stream-sort-selected {
-	color: #aa5171 !important;
+	color: #ee2c74 !important;
 }
 
 .fyre-comment-username {
-	font: italic 24px "Bodoni", serif;
+	font: italic 24px "Basel-BoldItalic", serif;
 	color: #000 !important;
 }
 
@@ -124,4 +132,13 @@
 .fyre-comment-reply::before {
 	content: "/";
 	padding-right: 10px;
+}
+
+.fyre .fyre-comment-author-tag {
+	background-color: #ee2c74;
+}
+
+.fyre .fyre-comment a {
+    color: #ee2c74;
+    font-weight: normal;
 }
