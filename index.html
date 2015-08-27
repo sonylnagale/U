@@ -1,0 +1,92 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>U by K</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src='http://cdn.livefyre.com/Livefyre.js'></script>
+        <script src="http://client-solutions.ep.livefyre.com/media/Y2xpZW50LXNvbHV0aW9ucy5lcC5saXZlZnlyZS5jb20=/javascripts/customprofiles.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        
+    </head>
+    <body>
+
+    <div class="livefyre-wrapper"> 
+        <div id='livecomments'>
+
+        </div>
+    	<div id="powered_by_livefyre_new"><a href="http://livefyre.com" target="_blank">Powered by Livefyre</a></div>
+    </div>
+
+
+        <script type="text/javascript">
+            var customStrings = {
+                commentCountLabel: "Comment (%s)",
+                commentCountLabelPlural: "Comments (%s)",
+                sortTopComments: "Most Popular",
+                sortSeparator: " ",
+                flagButton: "Report",
+                flagCommentTooltip: "Report",
+                flagConfirmationMessage: "Report %s's comment as %s?",
+                flagSuccessMsg: "Comment has been reported",
+                flagTitle:"Report %s's comment",
+                flagSubtitle: "Report as",
+                likeButton: "Recommend",
+                unlikeButton: "Don't Recommend"
+            };
+
+            var networkConfig = {
+                network: 'sales.fyre.co'
+            };
+
+            var convConfig = {
+                siteId: '371327',
+                articleId: 'CORE',
+                el: 'livecomments',
+                disableAvatars: 'true',
+                strings: customStrings
+            };
+
+            Livefyre.require(['fyre.conv#3'], 
+                function (Conv) {
+                    new Conv(networkConfig, [convConfig], function (widget) {
+                      console.log(widget);
+                      widget.on('initialRenderComplete', function() {
+                        setTimeout(function() {
+                          var editor = $('.fyre-editor-field');
+                          var replay; 
+                          var setEditor = function() {
+                            if ($(editor).height() > 30 && replay == 1) {
+                              $(editor).animate({height:"30px"}, 100);
+                            } else {
+                              $(editor).css('height','30px');
+                            }
+                            $('.fyre-editor-field').html('Share your thoughts!');
+                            $(editor).css('display','block');
+                          };
+                          
+                          setEditor(); // initial rendering of editor
+                          
+                          $(editor).click(function(e) {
+							$(editor).empty();
+							$(editor).animate({height:'100px'},100);
+                          });
+                          
+                          $(editor).blur(function(e) {
+                            replay = 1;
+                            setEditor();
+                          });
+                        }, 500); // this timeout blip shouldn't matter since the comment section is hidden until click anyway
+                      });
+                      
+                    });
+                    
+            });
+        </script>
+        <link rel="stylesheet" href="styles/main.css">
+        
+</body>
+</html>
