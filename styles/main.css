@@ -38,7 +38,7 @@
 .fyre-stream-sort .fyre-stream-sort-options .fyre-stream-sort-top-comments{
   position: absolute;
     top: 0;
-    right: 92%;
+    left: 0;
 }
 
 .fyre-auth {
