@@ -65,9 +65,7 @@
 #powered_by_livefyre_new a:hover {
     text-decoration: underline;
 }
-.fyre-editor-field {
-	display: none;
-}
+
 .fyre .fyre-comment-actions,
 .fyre .fyre-comment-actions a>span  {
 	opacity: 1 !important;
@@ -141,4 +139,18 @@
 .fyre .fyre-comment a {
     color: #ee2c74;
     font-weight: normal;
+}
+
+.fyre .fyre-comment-footer {
+	text-align: left;
+}
+
+.fyre .fyre-comment-actions a.fyre-flag-link  {
+	position: absolute;
+	right: 0;
+	color: #000;
+}
+
+.fyre .fyre-comment-actions a.fyre-flag-link span {
+	color: #000;
 }
